@@ -16,15 +16,20 @@ let b:current_syntax = "lemon"
 syn match   lemonAssign           /<::=>/
 syn region  lemonCode             start="{" end="}" fold
 syn match   lemonComment          /^\/\/.\+/
+syn region  lemonComment          start="/\*" end="\*/" 
+syn match   lemonInclude          /#.\+/
 syn match   lemonDirective        /^%\(\w\|_\)\+\>.\+/ contains=lemonDirectiveArg
 syn match   lemonDirectiveArg     /\s.\+$/ contained
 syn match   lemonNonTerminal      /\<\l\w\+\>/
 syn match   lemonTerminal         /\<\u\w\+\>/
+syn match   lemonID               /(\w)/
 
 hi def link lemonAssign           SpecialChar
-hi def link lemonCode             String
+hi def link lemonCode             Statement
+hi def link lemonID               Identifier
+hi def link lemonInclude          Include
 hi def link lemonComment          Comment
-hi def link lemonDirective        PreProc
+hi def link lemonDirective        Define
 hi def link lemonDirectiveArg     Normal
 hi def link lemonNonTerminal      Type
 hi def link lemonTerminal         Constant
