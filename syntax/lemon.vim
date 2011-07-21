@@ -1,7 +1,7 @@
 " Language:     Lemon Parser Generator
-" Maintainer:   Alex Little <alxlit@alxlit.name>
-" URL:          http://github.com/alxlit/vim-lemon-grammar
-" License:      WTFPL
+" Maintainer:   dccmx <dccmx@dccmx.com>
+" URL:          http://github.com/dccmx/vim-lemon-syntax
+" License:      MIT
 
 if exists("b:current_syntax")
   finish
