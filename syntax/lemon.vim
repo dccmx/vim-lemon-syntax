@@ -163,8 +163,10 @@ syn match	cSpecialCharacter display "L'\\x\x\+'"
 
 
 syn match   lemonAssign           /<::=>/
-syn match   lemonComment          /^\/\/.\+/
-syn region  lemonComment          start="/\*" end="\*/"
+
+" Comments; their contents
+syn region  lemonComment          start="/\*" end="\*/" contains=cTodo
+syn region  lemonComment          start="//" end="$" contains=cTodo
 syn cluster cStringGroup          contains=cString,cCharacter,cCppString,cSpecial,cFormat,cSpecialError,cSpecialCharacter
 syn cluster cGroup                contains=cStatement,cLabel,cConditional,cRepeat,cTodo,cConstant,cType,cOperator,cStructure,cStorageClass
 syn region  lemonCode             start="{" end="}" fold contains=lemonComment,@cGroup,@cStringGroup
